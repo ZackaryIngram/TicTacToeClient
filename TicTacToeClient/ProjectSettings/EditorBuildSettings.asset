@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoginScene.unity
     guid: 72b8aeff5133d2d45950a3209697dea6
+  - enabled: 1
+    path: Assets/Scenes/TicTacToeScene.unity
+    guid: f37b20b2bcf43174c87c2cebdb9569b8
   m_configObjects: {}
