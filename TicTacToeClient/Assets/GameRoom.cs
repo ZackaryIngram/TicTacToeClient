@@ -34,7 +34,7 @@ public class GameRoom : MonoBehaviour
 
     void GoToLockedUIState()
     {
-      //  SceneManager.LoadScene("LockedUIScene");
+        SceneManager.LoadScene("LockedUIScene");
     }
 
     void WriteDataToGameRoomFile()
