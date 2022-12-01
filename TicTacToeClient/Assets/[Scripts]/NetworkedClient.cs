@@ -30,6 +30,14 @@ public class NetworkedClient : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
             SendMessageToHost("Hello from client");
+        else if(Input.GetKeyDown(KeyCode.C))
+        {
+            SendMessageToHost(ClientToServerSignifiers.CreateAccount + "," + " Zack" + "," + "abc123");
+        }
+        else if (Input.GetKeyDown(KeyCode.L))
+        {
+            SendMessageToHost(ClientToServerSignifiers.Login + "," + " Zack" + "," + "abc123");
+        }
 
         UpdateNetworkConnection();
     }
@@ -119,3 +127,20 @@ public class NetworkedClient : MonoBehaviour
     
 }
 
+public static class ClientToServerSignifiers
+{
+    public const int Login = 1;
+    public const int CreateAccount = 2;
+}
+
+public static class ServerToClientSignifiers
+{
+    //  public const int LoginResponse = 1;
+    public const int loginSuccess = 1;
+   public const int accountSuccess = 2;
+
+   public const int loginFail = 3;
+    public const int accountFail = 4;
+
+
+}
