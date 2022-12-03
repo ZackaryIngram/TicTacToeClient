@@ -9,58 +9,48 @@ using System.Net;
 
 public class GameRoom : MonoBehaviour
 {
-    public InputField gameRoom;
-  
-    ArrayList rooms;
+    int connectionID;
+    int maxConnections = 1000;
+    int reliableChannelID;
+    int unreliableChannelID;
+    int hostID;
+    int socketPort = 5491;
+    byte error;
+    bool isConnected = false;
+    int ourClientID;
 
-    // Start is called before the first frame update
-    void Start()
+    public GameObject gameRoomEnterButton;
+    GameObject networkedClient;
+
+    private void Start()
     {
-        if (File.Exists(Application.dataPath + "/gameRoom.txt"))
-        {
-            rooms = new ArrayList(File.ReadAllLines(Application.dataPath + "/gameRoom.txt"));
-        }
-        else
-        {
-            File.WriteAllText(Application.dataPath + "/gameRoom.txt", "");
-        }
+        gameRoomEnterButton.GetComponent<Button>().onClick.AddListener(FindGameRoomButtonPressed);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FindGameRoomButtonPressed()
     {
-        
+       
+        networkedClient.GetComponent<NetworkedClient>().SendMessageToHost(ClientToServerSignifiers.AddToGameRoomQueue + "");
+        SceneManager.LoadScene("TicTacToeScene");
     }
 
-    void GoToLockedUIState()
+    private void ProcessRecievedMsg(string msg, int id)
     {
-        SceneManager.LoadScene("LockedUIScene");
-    }
+        Debug.Log("msg recieved = " + msg + ".  connection id = " + id);
 
-    void WriteDataToGameRoomFile()
-    {
-        bool gameRoomFileExists = false;
+        string[] csv = msg.Split(',');
 
-        rooms = new ArrayList(File.ReadAllLines(Application.dataPath + "/gameRoom.txt"));
-        foreach (var i in rooms)
+        int signifier = int.Parse(csv[0]);
+
+        if(signifier == ServerToClientSignifiers.loginSuccess)
         {
-            if (i.ToString().Contains(gameRoom.text))
-            {
-                gameRoomFileExists = true;
-                break;
-            }
+
+        }
+        else if (signifier == ServerToClientSignifiers.GameSessionStarted)
+        {
+            SceneManager.LoadScene("TicTacToeScene");
         }
 
-        if (gameRoomFileExists)
-        {
-            Debug.Log($"Username '{gameRoom.text}' already exists");
-        }
-        else
-        {
-            rooms.Add(gameRoom.text);
-            File.WriteAllLines(Application.dataPath + "/gameRoom.txt", (String[])rooms.ToArray(typeof(string)));
-            Debug.Log("Account Registered");
-        }
     }
 
 }

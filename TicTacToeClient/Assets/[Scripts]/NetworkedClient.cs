@@ -116,7 +116,12 @@ public class NetworkedClient : MonoBehaviour
     {
         Debug.Log("msg recieved = " + msg + ".  connection id = " + id);
 
-        
+        string[] csv = msg.Split(',');
+
+        int signifier = int.Parse(csv[0]);
+
+      
+
     }
 
     public bool IsConnected()
@@ -131,16 +136,22 @@ public static class ClientToServerSignifiers
 {
     public const int Login = 1;
     public const int CreateAccount = 2;
+
+    public const int AddToGameRoomQueue = 3;
+    public const int TicTacToePlay = 4;
+
 }
 
 public static class ServerToClientSignifiers
 {
-    //  public const int LoginResponse = 1;
-    public const int loginSuccess = 1;
-   public const int accountSuccess = 2;
+   
 
-   public const int loginFail = 3;
+    public const int loginSuccess = 1;
+    public const int accountSuccess = 2;
+
+    public const int loginFail = 3;
     public const int accountFail = 4;
 
-
+    public const int GameSessionStarted = 5;
 }
+

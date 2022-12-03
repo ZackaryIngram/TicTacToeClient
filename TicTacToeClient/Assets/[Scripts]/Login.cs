@@ -71,11 +71,11 @@ public class Login : MonoBehaviour
 
     void MoveToRegisterScene()
     {
-        SceneManager.LoadScene("Register");
+        SceneManager.LoadScene("RegisterScene");
     }
 
     void MoveToTicTacToeScene()
     {
-        SceneManager.LoadScene("TicTacToeScene");
+        SceneManager.LoadScene("GameRoomScene");
     }
 }

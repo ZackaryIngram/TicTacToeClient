@@ -75,7 +75,7 @@ public class Register : MonoBehaviour
         {
             credentials.Add(usernameInput.text + ":" + passwordInput.text);
             File.WriteAllLines(Application.dataPath + "/accountInfo.txt", (String[])credentials.ToArray(typeof(string)));
-            //Send to server
+            //Send to server ???
             SendMessageToHost(ClientToServerSignifiers.CreateAccount + "," + usernameInput.text + "," + passwordInput.text);
             Debug.Log("Account Registered");
         }
@@ -87,5 +87,22 @@ public class Register : MonoBehaviour
         NetworkTransport.Send(hostID, connectionID, reliableChannelID, buffer, msg.Length * sizeof(char), out error);
     }
 
+    private void ProcessRecievedMsg(string msg, int id)
+    {
+        Debug.Log("msg recieved = " + msg + ".  connection id = " + id);
+
+        string[] csv = msg.Split(',');
+
+        int signifier = int.Parse(csv[0]);
+      
+    }
+
+
+
+}
+
+public static class LoginResponse
+{
+    public const int Success = 1;
 
 }
