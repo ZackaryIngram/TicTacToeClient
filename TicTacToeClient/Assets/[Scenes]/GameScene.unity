@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 1661805469}
   - component: {fileID: 1661805468}
   - component: {fileID: 1661805467}
-  - component: {fileID: 1661805466}
+  - component: {fileID: 1661805471}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -652,18 +652,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1661805466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661805465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26063c27f08e4c241ab2fb32c3ce01f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1661805467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -750,6 +738,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1661805471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661805465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7545837bb45f2964e8c81185f6f1ed55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  makePlayButton: {fileID: 1993609571}
+  networkedClient: {fileID: 271541989}
 --- !u!1 &1709171510
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +920,7 @@ GameObject:
   - component: {fileID: 1993609574}
   - component: {fileID: 1993609573}
   m_Layer: 5
-  m_Name: CommunicateButton
+  m_Name: MakePlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1098,7 +1100,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Say Hello!
+  m_Text: 'Make a Move
 
 '
 --- !u!222 &2085614747
