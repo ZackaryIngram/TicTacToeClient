@@ -15,9 +15,9 @@ EditorBuildSettings:
     path: Assets/[Scenes]/GameRoomScene.unity
     guid: f37b20b2bcf43174c87c2cebdb9569b8
   - enabled: 1
-    path: Assets/[Scenes]/GameScene.unity
-    guid: b02496a28083a6849839e38b47de972b
-  - enabled: 1
     path: Assets/[Scenes]/LockedUIScene.unity
     guid: 2feb4283ec4ed6f4f813b16684bfc404
+  - enabled: 1
+    path: Assets/[Scenes]/GameScene.unity
+    guid: b02496a28083a6849839e38b47de972b
   m_configObjects: {}

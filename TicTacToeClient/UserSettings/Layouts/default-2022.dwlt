@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 772.8
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 85
+  controlID: 39
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,21 +317,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/[Scenes]
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/[Scenes]
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\zingr\Desktop\TicTacToeClient\TicTacToeClient
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 505a0000
-    m_LastClickedID: 23120
+    m_SelectedIDs: 485a0000
+    m_LastClickedID: 23112
     m_ExpandedIDs: 00000000245a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -488,9 +488,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 4a590000
-      m_LastClickedID: 22858
-      m_ExpandedIDs: 30fbffffb0590000c2590000
+      m_SelectedIDs: 805a0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 8cddffffdcddffff2cdeffffdee1ffff40e2ffff86e2ffff5ce3ffffa4e3fffff4e3ffff44e4ffff42e8ffff88e8ffff14eaffff5ceaffffaceaffff82ebffffd2ebffff1aecfffff0ecffff36edffff8eedffffd6edffffaceefffffceeffff4cefffff94efffff6af0ffffb2f0ffff02f1ffff52f1ffffc8f1ffff38f5ffff30fbffffb0590000925a0000585d0000f4660000286c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -772,9 +772,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 608.5789, y: 200.7227, z: 0.33344293}
+    m_Target: {x: 447.7532, y: 193.28894, z: 1.5774404}
     speed: 2
-    m_Value: {x: 608.5789, y: 200.7227, z: 0.33344293}
+    m_Value: {x: 447.7532, y: 193.28894, z: 1.5774404}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -824,9 +824,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 299.33838
+    m_Target: 237.78217
     speed: 2
-    m_Value: 299.33838
+    m_Value: 237.78217
   m_Ortho:
     m_Target: 1
     speed: 2

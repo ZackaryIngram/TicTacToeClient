@@ -31,7 +31,7 @@ public class NetworkedClient : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S))
             SendMessageToHost("Hello from client");
-        else if(Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown(KeyCode.C))
         {
             SendMessageToHost(ClientToServerSignifiers.CreateAccount + "," + " Zack" + "," + "abc123");
         }
