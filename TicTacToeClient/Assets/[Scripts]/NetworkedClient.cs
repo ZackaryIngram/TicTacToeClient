@@ -153,5 +153,7 @@ public static class ServerToClientSignifiers
     public const int accountFail = 4;
 
     public const int GameSessionStarted = 5;
+
+    public const int OpponentTicTacToePlay = 6;
 }
 

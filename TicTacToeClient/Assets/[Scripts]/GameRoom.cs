@@ -44,11 +44,15 @@ public class GameRoom : MonoBehaviour
 
         if(signifier == ServerToClientSignifiers.loginSuccess)
         {
-
+            SceneManager.LoadScene("GameRoomScene");
         }
         else if (signifier == ServerToClientSignifiers.GameSessionStarted)
         {
             SceneManager.LoadScene("TicTacToeScene");
+        }
+        else if(signifier == ServerToClientSignifiers.OpponentTicTacToePlay)
+        {
+            Debug.Log("Oppenent play");
         }
 
     }
