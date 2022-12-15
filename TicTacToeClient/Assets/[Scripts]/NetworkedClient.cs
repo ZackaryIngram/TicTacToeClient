@@ -4,6 +4,7 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class NetworkedClient : MonoBehaviour
 {
@@ -120,7 +121,20 @@ public class NetworkedClient : MonoBehaviour
 
         int signifier = int.Parse(csv[0]);
 
-      
+
+        if (signifier == ServerToClientSignifiers.loginSuccess)
+        {
+            SceneManager.LoadScene("GameRoomScene");
+        }
+        else if (signifier == ServerToClientSignifiers.GameSessionStarted)
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+        else if (signifier == ServerToClientSignifiers.OpponentTicTacToePlay)
+        {
+            Debug.Log("Oppenent play");
+        }
+
 
     }
 
