@@ -132,7 +132,10 @@ public class TicTacToeManager : MonoBehaviour
         else
         {
             SetVerict(players + " Wins!");
-        }      
+        }
+
+        //Reset the game after a set duration of time
+        StartCoroutine(RestartGame());
     }
 
     void SetVerict(string verdictText)
@@ -148,6 +151,23 @@ public class TicTacToeManager : MonoBehaviour
         for (int i = 0; i < XO_texts.Length; i++)
         {
             XO_texts[i].GetComponentInParent<Button>().interactable = toggle;
+        }
+    }
+
+    //A Coroutine that will reset the game when it is over after 5 seconds
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(5);
+
+        playerMarker = "X";
+        moveTracker = 0;
+        verdictGameObject.SetActive(false);
+       
+        GameOn(true);
+
+        for (int i = 0; i < XO_texts.Length; i++)
+        {
+            XO_texts[i].text = "";
         }
     }
 }
