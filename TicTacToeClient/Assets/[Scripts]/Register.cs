@@ -17,7 +17,7 @@ public class Register : MonoBehaviour
     int reliableChannelID;
     int unreliableChannelID;
     int hostID;
-    int socketPort = 5491;
+    int socketPort = 5494;
     byte error;
     bool isConnected = false;
     int ourClientID;
