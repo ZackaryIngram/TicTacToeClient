@@ -13,7 +13,7 @@ public class NetworkedClient : MonoBehaviour
     int reliableChannelID;
     int unreliableChannelID;
     int hostID;
-    int socketPort = 5491;
+    int socketPort = 5492;
     byte error;
     bool isConnected = false;
     int ourClientID;
@@ -121,7 +121,10 @@ public class NetworkedClient : MonoBehaviour
 
         int signifier = int.Parse(csv[0]);
 
-
+        if(signifier == ServerToClientSignifiers.accountSuccess)
+        {
+            SceneManager.LoadScene("LoginScene");
+        }
         if (signifier == ServerToClientSignifiers.loginSuccess)
         {
             SceneManager.LoadScene("GameRoomScene");
