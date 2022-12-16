@@ -5,22 +5,10 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Text;
-using UnityEditor.MemoryProfiler;
-using UnityEditor.PackageManager;
-using UnityEngine.Networking;
 
 public class Register : MonoBehaviour
 {
-    int connectionID;
-    int maxConnections = 1000;
-    int reliableChannelID;
-    int unreliableChannelID;
-    int hostID;
-    int socketPort = 5494;
-    byte error;
-    bool isConnected = false;
-    int ourClientID;
+
 
     public InputField usernameInput;
     public InputField passwordInput;
@@ -75,30 +63,11 @@ public class Register : MonoBehaviour
         {
             credentials.Add(usernameInput.text + ":" + passwordInput.text);
             File.WriteAllLines(Application.dataPath + "/accountInfo.txt", (String[])credentials.ToArray(typeof(string)));
-            //Send to server ???
-            SendMessageToHost(ClientToServerSignifiers.CreateAccount + "," + usernameInput.text + "," + passwordInput.text);
+            //Send to server 
+           //SendMessageToHost(ClientToServerSignifiers.CreateAccount + "," + usernameInput.text + "," + passwordInput.text);
             Debug.Log("Account Registered");
         }
     }
-
-    public void SendMessageToHost(string msg)
-    {
-        byte[] buffer = Encoding.Unicode.GetBytes(msg);
-        NetworkTransport.Send(hostID, connectionID, reliableChannelID, buffer, msg.Length * sizeof(char), out error);
-    }
-
-    private void ProcessRecievedMsg(string msg, int id)
-    {
-        Debug.Log("msg recieved = " + msg + ".  connection id = " + id);
-
-        string[] csv = msg.Split(',');
-
-        int signifier = int.Parse(csv[0]);
-      
-    }
-
-
-
 }
 
 public static class LoginResponse
